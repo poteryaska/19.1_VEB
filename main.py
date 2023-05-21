@@ -17,7 +17,7 @@ class MyServer(BaseHTTPRequestHandler):
     def do_POST(self):
         """ Метод для отправки POST-запросов """
         self._set_headers()
-        content_len = int(self.headers.get('content-length', 0))
+        content_len = int(self.headers.get('content-length'))
         post_body = self.rfile.read(content_len)
         print(post_body.decode())
 
